@@ -19,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 
     Route::get('Calendar/event','ControllerCalendar@index');
     Route::get('Calendar/event/{mes}','ControllerCalendar@index_month');
+
+    Route::get('Evento/form','ControllerEvent@form');
+    Route::post('Evento/create','ControllerEvent@create');
