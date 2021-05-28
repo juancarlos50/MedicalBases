@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+    Route::get('Calendar/event','ControllerCalendar@index');
+    Route::get('Calendar/event/{mes}','ControllerCalendar@index_month');
