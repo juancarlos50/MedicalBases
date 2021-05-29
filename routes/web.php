@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +14,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('Calendar/event','ControllerCalendar@index');
+Route::get('Calendar/event/{mes}','ControllerCalendar@index_month');
+
+// formulario
+Route::get('Evento/form','ControllerEvent@form');
+Route::post('Evento/create','ControllerEvent@create');
+// Detalles de evento
+Route::get('Evento/details/{id}','ControllerEvent@details');
+// Calendario
+Route::get('Evento/index','ControllerEvent@index');
+Route::get('Evento/index/{month}','ControllerEvent@index_month');
